@@ -20,4 +20,7 @@ class BasePage:
     def take_screenshot(self, name:str):
         self.page.screenshot(path=f"reports/{name}.png")
 
-    
+    def consent_overlay(self, selector):
+        if self.is_visible(selector):
+            self.click(selector)
+
